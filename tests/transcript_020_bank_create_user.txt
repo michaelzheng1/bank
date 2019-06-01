@@ -1,0 +1,117 @@
+# Test create-user by itself
+BANK: create-user
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has spaces at the end
+BANK: create-user  
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has a tab at the end
+BANK: create-user 
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has invalid at the end
+BANK: create-user@#%(@#)*$
+Invalid command
+
+# this has invalid at the start
+BANK: @#%(@#%@create-user
+Invalid command
+
+# this has incomplete parameters
+BANK: create-user hello
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has incomplete parameters
+BANK: create-user hello 0000
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid name
+BANK: create-user hello@#% 0000 0
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid pin
+BANK: create-user hello X0A0 0
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid pin
+BANK: create-user hello 21059821908357 0
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 A
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 #@$%(@%
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 2147483648
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 12059812095872019835709218750982315873246598723456897346598732465098247981324760218702981357293814702918374092186482
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 -235
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 -23059879820347523094
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 ENUPxxTU235
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 A
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 #@$%(@%
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount (one over the limit)
+BANK: create-user hello 0000 2147483648
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 12059812095872019835709218750982315873246598723456897346598732465098247981324760218702981357293814702918374092186482
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 -235
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid amount
+BANK: create-user hello 0000 ENUPxxTU235
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has a really long name (250 chars)
+BANK: create-user RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStox 0000 0
+Created user RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStox
+
+# this has a really long name but last char is invalid
+BANK: create-user RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYSto^ 1111 0
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has a really long name, should be invalid (251 chars)
+BANK: create-user RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStoxZ 0000 0
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has an invalid pin
+BANK: create-user hello 10000 0
+Usage:  create-user <user-name> <pin> <balance>
+
+# this has a valid pin
+BANK: create-user hello 9999 0
+Created user hello
+
+# creates user again
+BANK: create-user hello 1111 0
+Error:  user hello already exists
+
+BANK: 

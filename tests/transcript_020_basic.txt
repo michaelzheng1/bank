@@ -1,0 +1,54 @@
+Script started on 2018-11-27 12:58:42-0500
+BANK: create-user tom 0000 0
+Created user tom
+
+BANK: create-user bill 1111 1
+Created user bill
+
+BANK: create-user jane 2222 2
+Created user jane
+
+BANK: balance tom
+$0
+
+BANK: balance bill
+$1
+
+BANK: balance jane
+$2
+
+BANK: desposit tom 1
+Invalid command
+
+BANK: deposit tom 1
+$1 added to tom's account
+
+BANK: despoit bill 1
+Invalid command
+
+BANK: desposit bill 1
+Invalid command
+
+BANK: deposit bill 1
+$1 added to bill's account
+
+BANK: deposit jane 1
+$1 added to jane's account
+
+BANK: balance tom
+$1
+
+BANK: blanace bill
+Invalid command
+
+BANK: balane bill
+Invalid command
+
+BANK: balance bill
+$2
+
+BANK: balance jane
+$3
+
+BANK: 
+Script done on 2018-11-27 12:59:38-0500

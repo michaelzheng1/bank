@@ -1,0 +1,52 @@
+# Test balance by itself
+BANK: balance
+Usage:  balance <user-name>
+
+# this has spaces at the end
+BANK: balance  
+Usage:  balance <user-name>
+
+# this has a tab at the end
+BANK: balance 
+Usage:  balance <user-name>
+
+# this has invalid at the end
+BANK: balance@#%(@#)*$
+Invalid command
+
+# this has invalid at the start
+BANK: @#%(@#%@balance
+Invalid command
+
+# this has an invalid name
+BANK: balance hello@#%
+Usage:  balance <user-name>
+
+# this has an invalid 250 character name
+BANK: balance RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYSto^
+Usage:  balance <user-name>
+
+# this has a long 250 character but valid name
+BANK: balance RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStox
+No such user
+
+# this has a long 251 character name, should be invalid
+BANK: balance RECYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStoxS
+Usage:  balance <user-name>
+
+BANK: create-user mary 1111 1000000
+Created user mary
+
+# this has an invalid name
+BANK: balance mary@#%
+Usage:  balance <user-name>
+
+# this has an invalid name
+BANK: balance @#@#mary
+Usage:  balance <user-name>
+
+# this should say 1
+BANK: balance mary
+$1000000
+
+BANK: 

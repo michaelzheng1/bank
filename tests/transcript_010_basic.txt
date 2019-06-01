@@ -1,0 +1,118 @@
+# Basic test script
+#
+# Run with play_transcript.py
+#
+BANK: These are some basic tests for both the bank & atm
+Invalid command
+
+ATM: **************************************************
+Invalid command
+
+BANK: create-user tom 0000 0
+Created user tom
+
+BANK: balance tom
+$0
+
+BANK: deposit tom 20
+$20 added to tom's account
+
+BANK: create-user jane 1111 1
+Created user jane
+
+BANK: balance tom
+$20
+
+BANK: balance jane
+$1
+
+BANK: deposit jane 20
+$20 added to jane's account
+
+BANK: balance jane
+$21
+
+ATM: Hello there, ATM
+Invalid command
+
+#
+# This should be an invalid command since there isn't anyone logged in.
+# According to the prj spec.
+#
+ATM: withdraw
+Invalid command
+
+ATM: withdraw 200
+No user logged in
+
+#
+# This should be an invalid command since there isn't anyone logged in.
+#
+ATM: withdraw money
+Invalid command
+
+#
+# This should be a No user logged in
+#
+ATM: withdraw 2147483647
+No user logged in
+
+#
+# While this should be an invalid command since there isn't anyone logged in.
+# and the amount is greater than what can fit in an int
+#
+ATM: withdraw 2147483648
+Invalid command
+
+ATM: begin-session bill
+No such user
+
+ATM: begin-session jane
+PIN? 1234
+Not authorized
+
+ATM: begin-session jane
+PIN? 093487509832745
+Not authorized
+
+ATM: begin-session jane
+PIN? 1111
+Authorized
+
+BANK: balance jane
+$21
+
+ATM (jane): withdraw 1
+$1 dispensed
+
+BANK: balance jane
+$20
+
+ATM (jane): withdraw 10
+$10 dispensed
+
+ATM (jane): withdraw 10
+$10 dispensed
+
+BANK: balance jane
+$0
+
+ATM (jane): balance
+$0
+
+ATM (jane): withdraw 10
+Insufficient funds
+
+ATM (jane): withdraw 2147483648
+Invalid command
+
+ATM (jane): begin-session
+Invalid command
+
+ATM (jane): end-session
+User logged out
+
+ATM: end-session
+No user logged in
+
+BANK: 

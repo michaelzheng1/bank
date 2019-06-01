@@ -1,0 +1,37 @@
+# Transcript from the spec document
+BANK: balance Alice
+No such user
+
+BANK: create-user Alice 1234 100
+Created user Alice
+
+BANK: deposit Alice 2
+$2 added to Alice's account
+
+BANK: balance Alice
+$102
+
+ATM: begin-session Aliceeee
+No such user
+
+ATM: begin-session Alice
+PIN? 1234
+Authorized
+
+# This was originally $100 in the spec
+# had to adjust from bank deposit above
+#
+ATM (Alice): balance
+$102
+
+ATM (Alice): withdraw 1
+$1 dispensed
+
+ATM (Alice): balance
+$101
+
+ATM (Alice): end-session
+User logged out
+
+ATM: balance
+No user logged in

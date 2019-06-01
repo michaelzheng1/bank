@@ -1,0 +1,170 @@
+Script started on 2018-11-28 00:05:36-0500
+BANK: create-user ben 1234 10
+Created user ben
+
+BANK: baalnce ben
+Invalid command
+
+BANK: balance ben
+$10
+
+BANK: deposit ben 20
+$20 added to ben's account
+
+BANK: deposit ben 2147483
+$2147483 added to ben's account
+
+BANK: deposit jen 2147483
+No such user
+
+BANK: balance jen
+No such user
+
+BANK: create-user ilen    glen 20000 0
+Usage:  create-user <user-name> <pin> <balance>
+
+BANK: create-user
+Usage:  create-user <user-name> <pin> <balance>
+
+BANK: create-user 
+Usage:  create-user <user-name> <pin> <balance>
+
+BANK: create-user glen 2000 20000
+Created user glen
+
+BANK: baalnce glenn
+Invalid command
+
+BANK: balance glen
+$20000
+
+BANK: balance 
+Usage:  balance <user-name>
+
+BANK: balance
+Usage:  balance <user-name>
+
+BANK: balance  
+Usage:  balance <user-name>
+
+BANK: balance gel
+No such user
+
+BANK: bla
+Invalid command
+
+BANK: balance lg
+No such user
+
+BANK: snaohtunsth23'npstht23p
+Invalid command
+
+BANK: /balance glane
+Invalid command
+
+BANK: nsateohusrch23prcrhc,ou
+Invalid command
+
+BANK: oaenohaeusn haoeunsoahtunseoahu snoathu nsoeehu nsoahtu oasnuh
+Invalid command
+
+BANK: nohu oesnhu onehtuoenshu onsethu osneathu osneatuh oensahu oashu oaesnthu oasnthuoausnoae uoa
+Invalid command
+
+BANK: e 
+Invalid command
+
+BANK: deposit ben 000000000000000000000000000000000
+$0 added to ben's account
+
+BANK: deposit ben 000000000000000000000000000000000000000000000000000000000000000000000 
+Usage:  deposit <user-name> <amt>
+
+BANK: deposit ben 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+$0 added to ben's account
+
+BANK: deposit ben 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+$1 added to ben's account
+
+BANK: deposit ben 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+$0 added to ben's account
+
+BANK: Invalid command
+
+BANK: balance ben
+$2147514
+
+BANK: end-session
+Invalid command
+
+BANK: begin-ession ben
+Invalid command
+
+BANK: begin-esssion ben
+Invalid command
+
+BANK: begin-session ben
+Invalid command
+
+BANK: list
+Invalid command
+
+BANK: ls
+Invalid command
+
+BANK: amd
+Invalid command
+
+BANK: file
+Invalid command
+
+BANK: saontehusnoahusnoaehtu
+Invalid command
+
+BANK: 324srcrpch3s4nhyp3sn4hysnh3
+Invalid command
+
+BANK: .snptuhsn'3ht4spnth34snypth4,3snyth.,nsthyps.n,'thypsn.,'thpsn,.'hpsn,.'thpns,.t'h pns,.htu ,.nthu ,.hu sn,.h u
+Invalid command
+
+BANK: ,'.sn. hu,.nhu ,.srhu ,.rhu ,..hu mrlcu m,r.lgum93gjl,9mumlr.,chulr,.ccechuneotauhnstoahtusnhp4yrc3h4y9gdh349ychp349ruhcr.phucr4h.,ucn.phutn.picg5dicgpidcg5dic5dicg5dicg5dicg5dicg5dicg5dicg5dicg5dic5dic5gdi5cgidp5idtnotehditn.di s.pnuhn.ps', uh,.nt' hupn,.hpn.,t' hpsn,.hp sn,thp.s,n' hp.sn,'h.p 3l4rc4ghylr3c4hpr3c4hurc.hursc.phuns.pthu.sn,hu,.snu
+Invalid command
+
+BANK: balance jen
+No such user
+
+BANK: create-ue
+Invalid command
+
+BANK: creatce-user
+Invalid command
+
+BANK: create-user jen 2222 20
+Created user jen
+
+BANK: balance jen
+$20
+
+BANK: deposit jen 200
+$200 added to jen's account
+
+BANK: balance jen
+$220
+
+BANK: widthdra
+Invalid command
+
+BANK: withdraw jen
+Invalid command
+
+BANK: withdraw 
+Invalid command
+
+BANK: withdraw
+Invalid command
+
+BANK: dehhololeaunsthaoeutnsh aoeuncshuthethu
+Invalid command
+
+BANK: 
+Script done on 2018-11-28 00:10:30-0500

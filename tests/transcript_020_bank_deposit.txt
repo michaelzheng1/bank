@@ -1,0 +1,80 @@
+# Test deposit by itself
+BANK: deposit
+Usage:  deposit <user-name> <amt>
+
+# this has spaces at the end
+BANK: deposit  
+Usage:  deposit <user-name> <amt>
+
+# this has a tab at the end
+BANK: deposit 
+Usage:  deposit <user-name> <amt>
+
+# this has invalid at the end
+BANK: deposit@#%(@#)*$
+Invalid command
+
+# this has invalid at the start
+BANK: @#%(@#%@deposit
+Invalid command
+
+# this has incomplete parameters
+BANK: deposit hello
+Usage:  deposit <user-name> <amt>
+
+# this has an invalid name
+BANK: deposit hello@#% 0
+Usage:  deposit <user-name> <amt>
+
+# this has an invalid amount
+BANK: deposit hello A
+Usage:  deposit <user-name> <amt>
+
+# this has an invalid amount
+BANK: deposit hello #@%@#%
+Usage:  deposit <user-name> <amt>
+
+BANK: create-user DepositDude 0000 0
+Created user DepositDude
+
+# this has a missing user
+BANK: deposit DepositPerson 10
+No such user
+
+# this has an invalid amount
+BANK: deposit DepositDude A
+Usage:  deposit <user-name> <amt>
+
+# this has an invalid amount
+BANK: deposit DepositDude $QWER
+Usage:  deposit <user-name> <amt>
+
+# this has a valid amount
+BANK: deposit DepositDude 235
+$235 added to DepositDude's account
+
+# this has an invalid amount
+BANK: deposit DepositDude 2147483648
+Usage:  deposit <user-name> <amt>
+
+# this should work still under limit
+BANK: deposit DepositDude 2147483412
+$2147483412 added to DepositDude's account
+
+# this should say Too rich..
+BANK: deposit DepositDude 1
+Too rich for this program
+
+# this has an invalid amount
+BANK: deposit DepositDude 2147483648
+Usage:  deposit <user-name> <amt>
+
+# this has an invalid amount
+BANK: deposit DepositDude -214748364
+Usage:  deposit <user-name> <amt>
+
+# this has an invalid amount
+BANK: deposit DepositDude -000000000000000
+Usage:  deposit <user-name> <amt>
+
+BANK: 

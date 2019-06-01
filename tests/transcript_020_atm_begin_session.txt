@@ -1,0 +1,82 @@
+# Test begin-session by itself
+ATM: begin-session
+Usage:  begin-session <user-name>
+
+# this has spaces at the end
+ATM: begin-session  
+Usage:  begin-session <user-name>
+
+# this has a tab at the end
+ATM: begin-session 
+Usage:  begin-session <user-name>
+
+# this has invalid at the end
+ATM: begin-session@#%(@#)*$
+Invalid command
+
+# this has invalid at the start
+ATM: @#%(@#%@begin-session
+Invalid command
+
+# this has an invalid name
+ATM: begin-session hello@#%
+Usage:  begin-session <user-name>
+
+# this has a really long name (250 chars)
+ATM: begin-session xyzYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStox
+No such user
+
+# this has a really long name (251 chars)
+ATM: begin-session xyzYZqBedWlyXHykraoUPHBgjRAnyMkZJaqqQoSZGXAjvmTGLlTNqxOMpUWGAYSDHiYUuybbpATLSJsdlVaJROgpOpIqEEogYxUsRbNdORiayftknHCEUnBZkWdGaONUGyhtcueLothxZeoWSrsIFylmtAPABOIDaWqkMRGfLwpmmYHNeYCvEPJIVXwFiBeBBSdRsSWUOxdnepOLwTlCMmLXMdPnXqmgTbeyjdJCwzLspdEGoHtAUYStoxo
+Usage:  begin-session <user-name>
+
+BANK: create-user James 0000 0
+Created user James
+
+ATM: begin-session JAMES
+No such user
+
+ATM: begin-session Jame
+No such user
+
+ATM: begin-session Jame$
+Usage:  begin-session <user-name>
+
+ATM: begin-session James
+PIN? xyza
+Not authorized
+
+ATM: begin-session James
+PIN? 23509827359087
+Not authorized
+
+ATM: begin-session James
+PIN? 2350
+Not authorized
+
+ATM: begin-session James
+PIN? 235
+Not authorized
+
+ATM: begin-session James
+PIN? 23
+Not authorized
+
+ATM: begin-session James
+PIN? 2
+Not authorized
+
+ATM: begin-session James
+PIN? 
+Not authorized
+
+ATM: begin-session James
+PIN? 0000
+Authorized
+
+ATM (James): end-session
+User logged out
+
+### remove_file James.card ###
+ATM: begin-session James
+Unable to access James's card
